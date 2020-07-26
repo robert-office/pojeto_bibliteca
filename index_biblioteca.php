@@ -1,5 +1,15 @@
 <!-- fazendo o include da NAV do sistema --> 
-<?php include "includes/header_nav.php"; ?>
+<?php
+
+session_start();
+
+$id_usuario = $_SESSION['id_usu'];
+
+if(!empty($id_usuario)):
+
+include "includes/header_nav.php";
+?>
+
 
 <!-- conteudo ou container do sistema -->
 <div class="jumbotron tamanho-tela">
@@ -403,4 +413,13 @@
 
 </script>
 
-<?php include "includes/footer.php"; ?>
+<?php
+include "includes/footer.php";
+
+endif;
+
+if(empty($id_usuario)){
+  header("Location: index.php");
+}
+
+?>

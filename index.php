@@ -1,4 +1,6 @@
-<?php include "includes/conexao.php"; ?>
+<?php include "includes/conexao.php";
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -43,7 +45,7 @@
   }
 
   .login-container {
-    margin-top: 4%;
+    margin-top: 2%;
     border: 1px solid #CCD1D1;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -108,46 +110,105 @@
   #separadora{
     margin-bottom: 150px;
   }
+
+  .container-alert{
+    max-width: 52% !important;
+    margin-top: 20px !important;
+  }
+
+  #no_line{
+    text-decoration-line: none;
+    color: white;
+  }
+
+  .cadastro-btn{
+    text-decoration-line: none;
+    background: rgb(119,58,180);
+    background: linear-gradient(90deg, rgba(119,58,180,1) 18%, rgba(1,1,255,1) 83%);
+    color: white;
+  }
+
+  .cadastro-btn:hover{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  }
+
+  #btn-login{
+    background: rgb(1,1,255);
+    background: linear-gradient(90deg, rgba(1,1,255,1) 18%, rgba(119,58,180,1) 83%);
+  }
+
+  #btn-login:hover{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  }
+
+  #alerta-erro{
+    <?php
+      if(isset($_SESSION['erro_login'])){
+        if($_SESSION['erro_login'] == "1"){
+          $display_error = "block";
+        }else{
+          $display_error = "none";
+        }
+      }else{
+        $display_error = "none";
+      }
+    ?>
+    display: <?php echo $display_error; ?>
+  }
 </style>
 </head>
 
 <body>
+
+  <div class="container container-alert">
+    <div class="alert alert-danger" id="alerta-erro" role="alert">
+      Dados informados incorretos, verifique se a senha e/ou o usuario estão corretos
+    </div>
+  </div>
+
+
   <div class="container login-container">
     <div class="row">
+
       <div class="col-md-6 ads">
         <h1><span id="fl">Biblioteca</span></h1>
-
         <br>
-
         <img src="https://img.icons8.com/nolan/256/books-1.png"/>
-
       </div>
+
       <div class="col-md-6 login-form">
         <div class="profile-img">
           <img src="https://img.icons8.com/cotton/128/000000/name--v2.png"/>
         </div>
+
         <h3>LOGIN</h3>
+
         <form>
           <div class="form-group">
             <input type="email" class="form-control" required="required" name="username" placeholder="E-mail">
           </div>
+
           <div class="form-group">
             <input type="password" class="form-control" required="required" name="password" placeholder="Senha">
           </div>
+
           <div class="form-group">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Logar</button>
+            <button type="submit" id="btn-login" class="btn btn-primary btn-lg btn-block">Logar</button>
           </div>
-          <div class="form-group forget-password">
-            <a href="#">Não tem Conta? Cadastre-se aqui :)</a>
+
+          <div class="form-group">
+            <a href="cadastro_pessoas.php" class="cadastro-btn" id="no_line">
+              <button type="button" class="cadastro-btn btn btn-lg btn-block">
+                Cadastre-se aqui :)
+              </button>
+            </a>
           </div>
+
         </form>
       </div>
+
     </div>
   </div>
 </body>
-
-
-<div id="separadora"></div>
-
-
-<?php include "includes/footer.php"; ?>
