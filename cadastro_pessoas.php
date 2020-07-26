@@ -6,6 +6,7 @@ session_start();
 <html>
 <head>
   <title>Bibliotéca - Robert</title>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
   <style>
     <?php include "includes/style_nav.css"; ?>
   </style>

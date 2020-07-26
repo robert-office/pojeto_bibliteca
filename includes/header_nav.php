@@ -25,7 +25,18 @@
 
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 
-  
+  <style type="text/css">
+    .imgs_btns{
+      max-width: 50%;
+      max-height: 80%;
+      margin-top: 5%;
+      margin-left: 25%;
+    }
+    .btns_index{
+      align-items: center;
+      align-content: center;
+    }
+  </style>
 
 
   <script>

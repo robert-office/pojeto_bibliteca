@@ -6,6 +6,7 @@ session_start();
 <html>
 <head>
   <title>Bibliotéca - Robert</title>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <style>
     <?php include "includes/style_nav.css"; ?>
   </style>
@@ -164,10 +165,9 @@ session_start();
 
   <div class="container container-alert">
     <div class="alert alert-danger" id="alerta-erro" role="alert">
-      Dados informados incorretos, verifique se a senha e/ou o usuario estão corretos
+     E-mail e/ou Senha estão parcialmente ou completamente errados :(
     </div>
   </div>
-
 
   <div class="container login-container">
     <div class="row">
@@ -185,13 +185,17 @@ session_start();
 
         <h3>LOGIN</h3>
 
-        <form>
+       <!--  <div class="alert alert-danger" id="alerta-sucesso" role="alert">
+         E-mail ou senha estão incorretos :(
+        </div> -->
+
+        <form id="form_login" action="recebe_login.php" method="POST">
           <div class="form-group">
-            <input type="email" class="form-control" required="required" name="username" placeholder="E-mail">
+            <input type="email" class="form-control" required="required" name="email" placeholder="E-mail">
           </div>
 
           <div class="form-group">
-            <input type="password" class="form-control" required="required" name="password" placeholder="Senha">
+            <input type="password" class="form-control" required="required" name="senha" placeholder="Senha">
           </div>
 
           <div class="form-group">

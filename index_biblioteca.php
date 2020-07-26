@@ -1,11 +1,8 @@
-<!-- fazendo o include da NAV do sistema --> 
 <?php
-
+error_reporting(0);
 session_start();
-
 $id_usuario = $_SESSION['id_usu'];
-
-if(!empty($id_usuario)):
+if(!empty($id_usuario)){
 
 include "includes/header_nav.php";
 ?>
@@ -22,69 +19,89 @@ include "includes/header_nav.php";
   <br>
   <br>
 
-  <div style="display: flex; flex-direction: row;">
-    <div class="label_div_btns">
-      <label class="label_btns_index">Livros Cadastrados</label>
-      <div class="btns_index">
-        <a onclick="MandaUsusario(1050), MudaConteudoData(1)" style="cursor: pointer;">
-          <svg width="100%" height="100%" viewBox="0 0 16 16" class="bi bi-book-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.261 13.666c.345.14.739-.105.739-.477V2.5a.472.472 0 0 0-.277-.437c-1.126-.503-5.42-2.19-7.723.129C5.696-.125 1.403 1.56.277 2.063A.472.472 0 0 0 0 2.502V13.19c0 .372.394.618.739.477C2.738 12.852 6.125 12.113 8 14c1.875-1.887 5.262-1.148 7.261-.334z"/>
-          </svg>
-        </a>
+  <div class="row">
+    <div class="col">
+      <div class="label_div_btns">
+        <label class="label_btns_index">Livros Cadastrados</label>
+        <div class="btns_index">
+          <a onclick="MandaUsusario(1300), MudaConteudoData(1)" style="cursor: pointer;">
+            <svg width="100%" height="100%;" viewBox="0 0 16 16" class="bi bi-book-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.261 13.666c.345.14.739-.105.739-.477V2.5a.472.472 0 0 0-.277-.437c-1.126-.503-5.42-2.19-7.723.129C5.696-.125 1.403 1.56.277 2.063A.472.472 0 0 0 0 2.502V13.19c0 .372.394.618.739.477C2.738 12.852 6.125 12.113 8 14c1.875-1.887 5.262-1.148 7.261-.334z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="label_div_btns">
-      <label class="label_btns_index">Autores Cadastrados </label>
-      <div class="btns_index">
-        <a onclick="MandaUsusario(1050), MudaConteudoData(2)" style="cursor: pointer;">
-          <svg width="100%" height="100%" viewBox="0 0 16 16" class="bi bi-file-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M2 3a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3zm6 7a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 11.825 10.623 11 8 11s-4.146.826-5 1.755V13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
-          </svg>
-        </a>
+    <div class="col">
+      <div class="label_div_btns">
+        <label class="label_btns_index">Autores Cadastrados </label>
+        <div class="btns_index">
+          <a onclick="MandaUsusario(1300), MudaConteudoData(2)" style="cursor: pointer;">
+            <svg width="100%" height="100%;" viewBox="0 0 16 16" class="bi bi-file-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 3a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3zm6 7a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 11.825 10.623 11 8 11s-4.146.826-5 1.755V13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
     
-    <div class="label_div_btns">
-      <label class="label_btns_index">Editoras Cadastrada</label>
-      <div class="btns_index">
-        <a onclick="MandaUsusario(1060), MudaConteudoData(3)" style="cursor: pointer;">
-          <svg width="100%" height="100%" viewBox="0 0 16 16" class="bi bi-briefcase-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
-            <path fill-rule="evenodd" d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5v1.384l-7.614 2.03a1.5 1.5 0 0 1-.772 0L0 5.884V4.5zm5-2A1.5 1.5 0 0 1 6.5 1h3A1.5 1.5 0 0 1 11 2.5V3h-1v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V3H5v-.5z"/>
-          </svg>
-        </a>
+    <div class="col">
+      <div class="label_div_btns">
+        <label class="label_btns_index">Editoras Cadastrada</label>
+        <div class="btns_index">
+          <a onclick="MandaUsusario(1300), MudaConteudoData(3)" style="cursor: pointer;">
+            <svg width="100%" height="100%;" viewBox="0 0 16 16" class="bi bi-briefcase-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+              <path fill-rule="evenodd" d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5v1.384l-7.614 2.03a1.5 1.5 0 0 1-.772 0L0 5.884V4.5zm5-2A1.5 1.5 0 0 1 6.5 1h3A1.5 1.5 0 0 1 11 2.5V3h-1v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V3H5v-.5z"/>
+            </svg>
+          </a>
+        </div>
       </div>
-    </div>
- 
-    <div class="label_div_btns" onclick="MudaConteudo(1)" style="cursor: pointer;">
-      <label class="label_btns_index">Cadastrar Livro</label>
-      <div class="btns_index">
-        <a onclick="MandaUsusario(500)">
-          <img src="https://img.icons8.com/ios-filled/150/000000/add-book.png"/>
-        </a>
-      </div>
-    </div>
-
-    <div class="label_div_btns" onclick="MudaConteudo(2)" style="cursor: pointer;">
-      <label class="label_btns_index">Cadastrar Autor</label>
-      <div class="btns_index">
-        <a onclick="MandaUsusario(500)">
-          <img src="https://img.icons8.com/metro/150/000000/add-user-male.png"/>
-        </a> 
-      </div>
-    </div>
-
-    <div class="label_div_btns" onclick="MudaConteudo(3)" style="cursor: pointer;">
-      <label class="label_btns_index">Cadastrar Editora</label>
-      <div class="btns_index">
-        <a onclick="MandaUsusario(500)">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"></path></svg>
-        </a>
-      </div>
-      <div id="local_cadastro"></div>
     </div>
   </div>
+
+  <div class="row">
+
+    <div class="col">
+      <div class="label_div_btns" onclick="MudaConteudo(1)" style="cursor: pointer;">
+        <label class="label_btns_index">Cadastrar Livro</label>
+        <div class="btns_index">
+          <a onclick="MandaUsusario(760)">
+            <img width="100%" height="100%;" class="imgs_btns" src="https://img.icons8.com/ios-filled/150/000000/add-book.png"/>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col">
+      <div class="label_div_btns" onclick="MudaConteudo(2)" style="cursor: pointer;">
+        <label class="label_btns_index">Cadastrar Autor</label>
+        <div class="btns_index">
+          <a onclick="MandaUsusario(760)">
+            <img width="100%" height="100%;" class="imgs_btns"  src="https://img.icons8.com/metro/150/000000/add-user-male.png"/>
+          </a> 
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col">
+      <div class="label_div_btns" onclick="MudaConteudo(3)" style="cursor: pointer;">
+        <label class="label_btns_index">Cadastrar Editora</label>
+        <div class="btns_index">
+          <a onclick="MandaUsusario(760)">
+            <svg width="100%" height="100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"></path></svg>
+          </a>
+        </div>
+        <div id="local_cadastro"></div>
+      </div>
+    </div>
+
+  </div>
+
+
 </div> <!-- div container -->
 
 <div style="margin-top: 30px;"></div>
@@ -416,10 +433,7 @@ include "includes/header_nav.php";
 <?php
 include "includes/footer.php";
 
-endif;
-
-if(empty($id_usuario)){
-  header("Location: index.php");
+}else{
+header("Location: index.php");
 }
-
 ?>
